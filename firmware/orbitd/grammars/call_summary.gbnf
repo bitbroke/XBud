@@ -1,0 +1,29 @@
+# Call Summary Grammar — Post-call structured summary
+
+root ::= "{" ws
+  "\"executive_overview\"" ws ":" ws string "," ws
+  "\"key_takeaways\"" ws ":" ws string-array "," ws
+  "\"action_items\"" ws ":" ws action-items "," ws
+  "\"next_steps\"" ws ":" ws string-array "," ws
+  "\"sentiment\"" ws ":" ws sentiment-val "," ws
+  "\"call_duration_seconds\"" ws ":" ws integer
+ws "}"
+
+sentiment-val ::= "\"positive\"" | "\"negative\"" | "\"neutral\"" | "\"mixed\""
+
+action-items ::= "[" ws (action-item ("," ws action-item)*)? ws "]"
+action-item ::= "{" ws
+  "\"who\"" ws ":" ws string "," ws
+  "\"what\"" ws ":" ws string "," ws
+  "\"when\"" ws ":" ws (string | "null")
+ws "}"
+
+string-array ::= "[" ws (string ("," ws string)*)? ws "]"
+
+string ::= "\"" chars "\""
+chars ::= char*
+char ::= [^"\\] | "\\" ["\\/bfnrt]
+
+integer ::= [0-9]+
+
+ws ::= [ \t\n]*

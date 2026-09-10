@@ -1,0 +1,27 @@
+# Action Item Grammar — Constrained JSON output for W3 extraction
+# Guarantees: who (string), what (string), when (ISO-8601 or null), priority
+
+root ::= "[" ws action-items ws "]"
+
+action-items ::= action-item ("," ws action-item)*
+action-items ::= ""
+
+action-item ::= "{" ws
+  "\"who\"" ws ":" ws string "," ws
+  "\"what\"" ws ":" ws string "," ws
+  "\"when\"" ws ":" ws (datetime | "null") "," ws
+  "\"priority\"" ws ":" ws priority-val "," ws
+  "\"confidence\"" ws ":" ws number
+ws "}"
+
+priority-val ::= "\"high\"" | "\"medium\"" | "\"low\""
+
+datetime ::= "\"" [0-9]{4} "-" [0-9]{2} "-" [0-9]{2} "T" [0-9]{2} ":" [0-9]{2} ":" [0-9]{2} ("+" | "-") [0-9]{2} ":" [0-9]{2} "\""
+
+string ::= "\"" chars "\""
+chars ::= char*
+char ::= [^"\\] | "\\" ["\\/bfnrt]
+
+number ::= [0-9] ("." [0-9]+)?
+
+ws ::= [ \t\n]*

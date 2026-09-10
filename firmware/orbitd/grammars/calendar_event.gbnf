@@ -1,0 +1,22 @@
+# Calendar Event Grammar — .ics payload structure
+
+root ::= "[" ws (calendar-event ("," ws calendar-event)*)? ws "]"
+
+calendar-event ::= "{" ws
+  "\"title\"" ws ":" ws string "," ws
+  "\"datetime\"" ws ":" ws string "," ws
+  "\"duration_minutes\"" ws ":" ws integer "," ws
+  "\"participants\"" ws ":" ws string-array "," ws
+  "\"location\"" ws ":" ws (string | "null") "," ws
+  "\"notes\"" ws ":" ws (string | "null")
+ws "}"
+
+string-array ::= "[" ws (string ("," ws string)*)? ws "]"
+
+string ::= "\"" chars "\""
+chars ::= char*
+char ::= [^"\\] | "\\" ["\\/bfnrt]
+
+integer ::= [0-9]+
+
+ws ::= [ \t\n]*

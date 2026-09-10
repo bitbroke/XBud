@@ -1,0 +1,29 @@
+name: earbrain_companion
+description: Companion app for the Ear-Brain AI Wearable.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # For BLE communication
+  flutter_blue_plus: ^1.15.1
+  # For state management
+  provider: ^6.1.1
+  # For parsing JSON from the case
+  json_annotation: ^4.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

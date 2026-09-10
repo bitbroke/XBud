@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twilio MVP Dashboard</title>
+    <style>
+        body { background: #0A0A0A; color: white; font-family: sans-serif; padding: 20px; }
+        .card { background: #1E1E1E; padding: 20px; border-radius: 12px; margin-bottom: 20px; text-align: center; }
+        .status { color: #00E5FF; font-weight: bold; font-size: 1.2em; margin-top: 10px; }
+        .transcript-box { background: #141414; border: 1px solid #333; padding: 15px; border-radius: 8px; min-height: 80px; font-style: italic; color: #CCC; }
+        .action-item { background: #1E1E1E; padding: 15px; border-left: 4px solid #00E5FF; margin-bottom: 10px; border-radius: 8px; }
+        .action-title { font-size: 1.1em; font-weight: bold; margin-bottom: 5px; }
+        .action-subtitle { color: #888; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">EAR-BRAIN TWILIO MVP</h2>
+    
+    <div class="card">
+        <div>📡 Twilio Integration Status</div>
+        <div class="status" id="status">Awaiting Call...</div>
+    </div>
+
+    <h3>LIVE TRANSCRIPT</h3>
+    <div class="transcript-box" id="transcript">Make a call to your Twilio number to begin.</div>
+
+    <h3>ACTION ITEMS</h3>
+    <div id="action-feed">
+        <p style="color: #666; text-align: center;">No actions yet.</p>
+    </div>
+
+    <script>
+        setInterval(async () => {
+            try {
+                const res = await fetch('/api/data');
+                const data = await res.json();
+                document.getElementById('status').innerText = data.status;
+                if (data.transcript) {
+                    document.getElementById('transcript').innerText = data.transcript;
+                }
+                
+                if (data.action_items.length > 0) {
+                    let html = '';
+                    data.action_items.forEach(item => {
+                        html += `<div class="action-item">
+                            <div class="action-title">${item.what}</div>
+                            <div class="action-subtitle">Assigned to: ${item.who} | Due: ${item.when} | Priority: ${item.priority}</div>
+                        </div>`;
+                    });
+                    document.getElementById('action-feed').innerHTML = html;
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

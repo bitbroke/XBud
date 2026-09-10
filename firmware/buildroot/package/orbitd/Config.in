@@ -1,0 +1,9 @@
+config BR2_PACKAGE_ORBITD
+	bool "orbitd"
+	depends on BR2_TOOLCHAIN_HAS_THREADS
+	depends on BR2_INSTALL_LIBSTDCPP
+	select BR2_PACKAGE_ALSA_LIB
+	select BR2_PACKAGE_BLUEZ5_UTILS
+	select BR2_PACKAGE_SQLCIPHER
+	help
+	  Ear-Brain core daemon for embedded audio intelligence.

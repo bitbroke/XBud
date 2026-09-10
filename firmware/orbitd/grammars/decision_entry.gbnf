@@ -1,0 +1,23 @@
+# Decision Ledger Entry Grammar
+
+root ::= "[" ws (decision ("," ws decision)*)? ws "]"
+
+decision ::= "{" ws
+  "\"decision_text\"" ws ":" ws string "," ws
+  "\"parties_involved\"" ws ":" ws string-array "," ws
+  "\"context\"" ws ":" ws string "," ws
+  "\"binding\"" ws ":" ws boolean "," ws
+  "\"confidence\"" ws ":" ws number
+ws "}"
+
+boolean ::= "true" | "false"
+
+string-array ::= "[" ws (string ("," ws string)*)? ws "]"
+
+string ::= "\"" chars "\""
+chars ::= char*
+char ::= [^"\\] | "\\" ["\\/bfnrt]
+
+number ::= [0-9] ("." [0-9]+)?
+
+ws ::= [ \t\n]*

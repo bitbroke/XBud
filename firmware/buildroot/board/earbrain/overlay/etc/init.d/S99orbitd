@@ -1,0 +1,53 @@
+#!/bin/sh
+# S99orbitd — BusyBox init script for the orbitd daemon
+# Placed in /etc/init.d/ on the target rootfs
+
+DAEMON=/opt/orbitd/bin/orbitd
+CONFIG=/etc/orbitd.conf
+PIDFILE=/var/run/orbitd.pid
+NAME=orbitd
+
+case "$1" in
+    start)
+        echo "Starting $NAME..."
+
+        # Mount volatile tmpfs (if not already via fstab)
+        if ! mountpoint -q /volatile 2>/dev/null; then
+            mkdir -p /volatile
+            mount -t tmpfs -o size=128m,mode=0700,noexec,nosuid,nodev tmpfs /volatile
+        fi
+
+        # Disable swap (critical for DPDP compliance)
+        swapoff -a 2>/dev/null
+
+        # Set CPU governor to schedutil
+        for cpu in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do
+            echo schedutil > "$cpu" 2>/dev/null
+        done
+
+        # Set NPU governor to performance
+        echo performance > /sys/class/devfreq/fdab0000.npu/governor 2>/dev/null
+
+        # Start daemon
+        start-stop-daemon -S -b -m -p $PIDFILE -x $DAEMON -- $CONFIG
+        echo "  $NAME started."
+        ;;
+    stop)
+        echo "Stopping $NAME..."
+        start-stop-daemon -K -p $PIDFILE
+        # Secure wipe volatile memory
+        find /volatile -type f -exec shred -n 1 -z -u {} \;
+        echo "  $NAME stopped."
+        ;;
+    restart)
+        $0 stop
+        sleep 1
+        $0 start
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
+esac
+
+exit 0

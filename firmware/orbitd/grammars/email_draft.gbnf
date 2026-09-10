@@ -1,0 +1,15 @@
+# Email Draft Grammar
+
+root ::= "{" ws
+  "\"subject\"" ws ":" ws string "," ws
+  "\"body\"" ws ":" ws string "," ws
+  "\"priority\"" ws ":" ws priority-val
+ws "}"
+
+priority-val ::= "\"high\"" | "\"normal\"" | "\"low\""
+
+string ::= "\"" chars "\""
+chars ::= char*
+char ::= [^"\\] | "\\" ["\\/bfnrt]
+
+ws ::= [ \t\n]*

@@ -1,0 +1,30 @@
+# Executables and archives
+*.exe
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+.env
+
+# Logs and transient output files
+*.log
+*_output.txt
+lhr_log.txt
+lt_url.txt
+my_url.txt
+pinggy_url.txt
+stable_url.txt
+twilio_output.txt
+twilio_numbers.txt
+auto_config_output.txt
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/

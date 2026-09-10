@@ -1,0 +1,27 @@
+# CRM Payload Grammar — BANT/MEDDIC framework fields
+
+root ::= "{" ws
+  "\"deal_stage\"" ws ":" ws deal-stage "," ws
+  "\"budget_mentioned\"" ws ":" ws (string | "null") "," ws
+  "\"authority_confirmed\"" ws ":" ws boolean "," ws
+  "\"need_identified\"" ws ":" ws (string | "null") "," ws
+  "\"timeline\"" ws ":" ws (string | "null") "," ws
+  "\"competitor_mentions\"" ws ":" ws string-array "," ws
+  "\"objections_raised\"" ws ":" ws string-array "," ws
+  "\"next_action\"" ws ":" ws (string | "null") "," ws
+  "\"confidence_score\"" ws ":" ws number
+ws "}"
+
+deal-stage ::= "\"prospecting\"" | "\"qualification\"" | "\"proposal\"" | "\"negotiation\"" | "\"closed_won\"" | "\"closed_lost\"" | "\"unknown\""
+
+boolean ::= "true" | "false"
+
+string-array ::= "[" ws (string ("," ws string)*)? ws "]"
+
+string ::= "\"" chars "\""
+chars ::= char*
+char ::= [^"\\] | "\\" ["\\/bfnrt]
+
+number ::= [0-9] ("." [0-9]+)?
+
+ws ::= [ \t\n]*

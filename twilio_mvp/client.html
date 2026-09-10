@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ear-Brain Audio Client</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: #0f172a; color: white; }
+        .btn { padding: 15px 30px; font-size: 18px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+        .start { background: #3b82f6; color: white; }
+        .stop { background: #ef4444; color: white; display: none; }
+        .status { margin-top: 20px; font-size: 16px; color: #94a3b8; }
+    </style>
+</head>
+<body>
+    <h1>Microphone Client</h1>
+    <p style="color: #cbd5e1; text-align: center; max-width: 400px;">This simulates the Ear-Brain hardware sending audio chunks to the server.</p>
+    
+    <button class="btn start" id="startBtn" onclick="startStreaming()">Start Streaming</button>
+    <button class="btn stop" id="stopBtn" onclick="stopStreaming()">Stop Streaming</button>
+    <div class="status" id="statusText">Ready to connect...</div>
+
+    <script>
+        let ws;
+        let audioContext;
+        let processor;
+        let input;
+
+        // Prevent GC by attaching to window
+        window.audioProcessor = null;
+
+        async function startStreaming() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                
+                // Connect WebSocket (use wss:// if loaded over https)
+                const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
+                ws = new WebSocket(`${protocol}${window.location.host}/stream`);
+                
+                ws.onopen = () => {
+                    document.getElementById("startBtn").style.display = "none";
+                    document.getElementById("stopBtn").style.display = "block";
+                    document.getElementById("statusText").innerText = "Streaming audio to AI pipeline...";
+                    document.getElementById("statusText").style.color = "#22c55e";
+                    
+                    // Setup Audio Processing
+                    audioContext = new AudioContext({ sampleRate: 8000 });
+                    input = audioContext.createMediaStreamSource(stream);
+                    processor = audioContext.createScriptProcessor(4096, 1, 1);
+                    window.audioProcessor = processor; // Prevent GC
+                    
+                    processor.onaudioprocess = (e) => {
+                        if (ws.readyState === WebSocket.OPEN) {
+                            const floatData = e.inputBuffer.getChannelData(0);
+                            
+                            // Convert float32 to int16 PCM (simulating the Twilio/Hardware format)
+                            const pcmData = new Int16Array(floatData.length);
+                            for (let i = 0; i < floatData.length; i++) {
+                                let s = Math.max(-1, Math.min(1, floatData[i]));
+                                pcmData[i] = s < 0 ? s * 0x8000 : s * 0x7FFF;
+                            }
+                            
+                            // Convert to Base64 (simplification for the mock pipeline)
+                            let binary = '';
+                            let bytes = new Uint8Array(pcmData.buffer);
+                            let len = bytes.byteLength;
+                            for (let i = 0; i < len; i++) {
+                                binary += String.fromCharCode(bytes[i]);
+                            }
+                            
+                            ws.send(JSON.stringify({
+                                event: "media",
+                                media: { payload: btoa(binary) }
+                            }));
+                        }
+                    };
+                    
+                    input.connect(processor);
+                    processor.connect(audioContext.destination);
+                };
+            } catch (err) {
+                document.getElementById("statusText").innerText = "Error: " + err.message;
+                document.getElementById("statusText").style.color = "#ef4444";
+                console.error(err);
+            }
+        }
+
+        function stopStreaming() {
+            if (processor) {
+                processor.disconnect();
+                input.disconnect();
+                audioContext.close();
+            }
+            if (ws) {
+                ws.send(JSON.stringify({ event: "stop" }));
+                ws.close();
+            }
+            document.getElementById("startBtn").style.display = "block";
+            document.getElementById("stopBtn").style.display = "none";
+            document.getElementById("statusText").innerText = "Stream stopped.";
+            document.getElementById("statusText").style.color = "#94a3b8";
+        }
+    </script>
+</body>
+</html>
