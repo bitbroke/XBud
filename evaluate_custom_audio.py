@@ -4,6 +4,8 @@ import time
 import re
 import json
 
+sys.stdout.reconfigure(encoding='utf-8')
+
 # Auto-install dependencies if missing
 try:
     import whisper
@@ -25,8 +27,7 @@ os.environ["PATH"] = ffmpeg_path + os.pathsep + os.environ.get("PATH", "")
 
 # Files to process
 AUDIO_FILES = [
-    r"C:\Users\M S I\Downloads\hottransfer417600.mp3",
-    r"C:\Users\M S I\Downloads\arunangshubanerjee-indian-railway-train-arriving-announcement-333043.mp3"
+    r"c:\Ankshit\project_xbud\test_dl.m4a"
 ]
 
 def scrub_pii(text):

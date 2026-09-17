@@ -1,0 +1,43 @@
+{
+    "version": 1,
+    "description": "Hotword corrections for Indian pop-culture, names, and common ASR errors. User-editable via companion app.",
+    
+    "exact_replacements": {
+        "india's gold lady": "India's Got Latent",
+        "india gold lady": "India's Got Latent",
+        "indias gold lady": "India's Got Latent",
+        "india's got talent": "India's Got Latent",
+        "ashneel grohan": "Ashneer Grover",
+        "ashneel bay": "Ashneer Grover",
+        "ashneel": "Ashneer",
+        "ashneer groover": "Ashneer Grover",
+        "rakhishaman": "Rakhi Sawant",
+        "rakheshi": "Rakhi",
+        "samay rena": "Samay Raina",
+        "samay rena": "Samay Raina",
+        "benchlord": "benchod",
+        "benchur": "benchod"
+    },
+
+    "known_entities": [
+        "Samay Raina",
+        "Ashneer Grover",
+        "Rakhi Sawant",
+        "Balraj Gai",
+        "India's Got Latent",
+        "Shark Tank India",
+        "BharatPe",
+        "Flipkart",
+        "Aadhaar",
+        "Netflix",
+        "Madhuri"
+    ],
+
+    "slang_normalizations": {
+        "benchlord": "BC",
+        "benchur": "BC",
+        "behenchaud": "BC",
+        "madarjat": "MC",
+        "bhosdi": "BKL"
+    }
+}

@@ -28,3 +28,18 @@ auto_config_output.txt
 .DS_Store
 .vscode/
 .idea/
+
+# Audio and media files
+*.m4a
+*.mp3
+*.wav
+*.flac
+*.aac
+*.opus
+*.ogg
+
+# Models and evaluation text dumps
+indicwhisper_transcript.txt
+model/
+vosk-model*/
+

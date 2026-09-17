@@ -1,22 +1,139 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ear-Brain Audio Client</title>
+    <meta charset="UTF-8">
+    <title>XBud AI Audio Client</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: #0f172a; color: white; }
-        .btn { padding: 15px 30px; font-size: 18px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; transition: 0.2s; }
-        .start { background: #3b82f6; color: white; }
-        .stop { background: #ef4444; color: white; display: none; }
-        .status { margin-top: 20px; font-size: 16px; color: #94a3b8; }
+        :root {
+            --bg-color: #050505;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent: #00E5FF;
+            --accent-gradient: linear-gradient(135deg, #00E5FF 0%, #0077FF 100%);
+            --text-main: #FFFFFF;
+            --text-muted: #8892B0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.03), transparent 40%);
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            margin-top: 0;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-size: 1.1em;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+
+        .start {
+            background: var(--accent-gradient);
+            color: #000;
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+        }
+
+        .start:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+        }
+
+        .stop {
+            background: rgba(255, 77, 77, 0.1);
+            color: #FF4D4D;
+            border: 1px solid rgba(255, 77, 77, 0.3);
+            display: none;
+        }
+
+        .stop:hover {
+            background: rgba(255, 77, 77, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .status {
+            margin-top: 25px;
+            font-size: 0.95em;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid transparent;
+        }
+
+        .status.active {
+            color: var(--accent);
+            background: rgba(0, 229, 255, 0.05);
+            border-color: rgba(0, 229, 255, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        .status.error {
+            color: #FF4D4D;
+            background: rgba(255, 77, 77, 0.05);
+            border-color: rgba(255, 77, 77, 0.2);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.2); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 229, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); }
+        }
     </style>
 </head>
 <body>
-    <h1>Microphone Client</h1>
-    <p style="color: #cbd5e1; text-align: center; max-width: 400px;">This simulates the Ear-Brain hardware sending audio chunks to the server.</p>
-    
-    <button class="btn start" id="startBtn" onclick="startStreaming()">Start Streaming</button>
-    <button class="btn stop" id="stopBtn" onclick="stopStreaming()">Stop Streaming</button>
-    <div class="status" id="statusText">Ready to connect...</div>
+    <div class="card">
+        <h1>Offline Audio Capture</h1>
+        <p>This simulates the XBud hardware sending live audio chunks to the local Python server via WebSocket, operating entirely without internet.</p>
+        
+        <button class="btn start" id="startBtn" onclick="startStreaming()">Start Streaming</button>
+        <button class="btn stop" id="stopBtn" onclick="stopStreaming()">Stop Streaming</button>
+        
+        <div class="status" id="statusText">Ready to connect...</div>
+    </div>
 
     <script>
         let ws;
@@ -28,37 +145,34 @@
         window.audioProcessor = null;
 
         async function startStreaming() {
+            const statusText = document.getElementById("statusText");
             try {
                 const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
                 
-                // Connect WebSocket (use wss:// if loaded over https)
                 const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
                 ws = new WebSocket(`${protocol}${window.location.host}/stream`);
                 
                 ws.onopen = () => {
                     document.getElementById("startBtn").style.display = "none";
                     document.getElementById("stopBtn").style.display = "block";
-                    document.getElementById("statusText").innerText = "Streaming audio to AI pipeline...";
-                    document.getElementById("statusText").style.color = "#22c55e";
                     
-                    // Setup Audio Processing
+                    statusText.innerText = "Streaming audio to AI pipeline...";
+                    statusText.className = "status active";
+                    
                     audioContext = new AudioContext({ sampleRate: 8000 });
                     input = audioContext.createMediaStreamSource(stream);
                     processor = audioContext.createScriptProcessor(4096, 1, 1);
-                    window.audioProcessor = processor; // Prevent GC
+                    window.audioProcessor = processor;
                     
                     processor.onaudioprocess = (e) => {
                         if (ws.readyState === WebSocket.OPEN) {
                             const floatData = e.inputBuffer.getChannelData(0);
-                            
-                            // Convert float32 to int16 PCM (simulating the Twilio/Hardware format)
                             const pcmData = new Int16Array(floatData.length);
                             for (let i = 0; i < floatData.length; i++) {
                                 let s = Math.max(-1, Math.min(1, floatData[i]));
                                 pcmData[i] = s < 0 ? s * 0x8000 : s * 0x7FFF;
                             }
                             
-                            // Convert to Base64 (simplification for the mock pipeline)
                             let binary = '';
                             let bytes = new Uint8Array(pcmData.buffer);
                             let len = bytes.byteLength;
@@ -77,13 +191,14 @@
                     processor.connect(audioContext.destination);
                 };
             } catch (err) {
-                document.getElementById("statusText").innerText = "Error: " + err.message;
-                document.getElementById("statusText").style.color = "#ef4444";
+                statusText.innerText = "Error: " + err.message;
+                statusText.className = "status error";
                 console.error(err);
             }
         }
 
         function stopStreaming() {
+            const statusText = document.getElementById("statusText");
             if (processor) {
                 processor.disconnect();
                 input.disconnect();
@@ -95,8 +210,9 @@
             }
             document.getElementById("startBtn").style.display = "block";
             document.getElementById("stopBtn").style.display = "none";
-            document.getElementById("statusText").innerText = "Stream stopped.";
-            document.getElementById("statusText").style.color = "#94a3b8";
+            
+            statusText.innerText = "Stream stopped.";
+            statusText.className = "status";
         }
     </script>
 </body>

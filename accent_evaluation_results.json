@@ -1,0 +1,170 @@
+{
+  "model": "whisper-base",
+  "device": "cuda",
+  "model_ram_mb": 483.5,
+  "normalizer_enabled": true,
+  "results": [
+    {
+      "name": "Hindi News (Standard Hindi)",
+      "language": "Hindi",
+      "accent": "Standard Hindi",
+      "yt_title": "Top 100 News: आज की बड़ी खबरें |  Sukhbir Singh Badal | Amit Shah | Ranchi Protest | Rahul Gandhi",
+      "status": "OK",
+      "duration_s": 120,
+      "asr_time_s": 16.51,
+      "rtf": 0.138,
+      "word_count": 322,
+      "words_per_sec": 2.7,
+      "detected_lang": "hi",
+      "transcript_len": 1799,
+      "normalizer_corrections": false
+    },
+    {
+      "name": "South Indian English (Tech Talk)",
+      "language": "English",
+      "accent": "South Indian",
+      "yt_title": "ENGLISH SPEECH | SUNDAR PICHAI: The AI Moment (English Subtitles)",
+      "status": "OK",
+      "duration_s": 120,
+      "asr_time_s": 5.3,
+      "rtf": 0.044,
+      "word_count": 284,
+      "words_per_sec": 2.4,
+      "detected_lang": "en",
+      "transcript_len": 1651,
+      "normalizer_corrections": false
+    },
+    {
+      "name": "Hinglish Stand-up Comedy",
+      "language": "Hinglish",
+      "accent": "Delhi/North Indian",
+      "yt_title": "Bahut Pighle Hain | Zakir Khan | Stand-Up Comedy | Sukha Puri 6",
+      "status": "OK",
+      "duration_s": 120,
+      "asr_time_s": 12.46,
+      "rtf": 0.104,
+      "word_count": 213,
+      "words_per_sec": 1.8,
+      "detected_lang": "bn",
+      "transcript_len": 926,
+      "normalizer_corrections": false
+    },
+    {
+      "name": "Bengali English (Interview)",
+      "language": "English",
+      "accent": "Bengali",
+      "yt_title": "Sourav Ganguly Gives Leadership Lessons Through Dealing With Virender Sehwag, Cricket | SoSouth",
+      "status": "OK",
+      "duration_s": 120,
+      "asr_time_s": 5.91,
+      "rtf": 0.049,
+      "word_count": 373,
+      "words_per_sec": 3.1,
+      "detected_lang": "en",
+      "transcript_len": 1791,
+      "normalizer_corrections": false
+    },
+    {
+      "name": "Punjabi English (Interview)",
+      "language": "English",
+      "accent": "Punjabi",
+      "yt_title": "INCREDIBLE MESSAGE - Motivational video |NAVJOT SINGH SIDHU|",
+      "status": "OK",
+      "duration_s": 120,
+      "asr_time_s": 17.25,
+      "rtf": 0.144,
+      "word_count": 243,
+      "words_per_sec": 2.0,
+      "detected_lang": "hi",
+      "transcript_len": 1279,
+      "normalizer_corrections": false
+    },
+    {
+      "name": "Tamil Speech (Political)",
+      "language": "Tamil",
+      "accent": "Tamil",
+      "yt_title": "பேரவையில் CM விஜயின் Full Speech | CM Vijay's Full Speech in tamilnadu Assembly",
+      "status": "OK",
+      "duration_s": 120,
+      "asr_time_s": 57.5,
+      "rtf": 0.479,
+      "word_count": 0,
+      "words_per_sec": 0.0,
+      "detected_lang": "ta",
+      "transcript_len": 0,
+      "normalizer_corrections": false
+    },
+    {
+      "name": "Gujarati English (Business)",
+      "language": "English",
+      "accent": "Gujarati",
+      "yt_title": "ENGLISH SPEECH | MUKESH AMBANI: Empowering the Future (English Subtitles)",
+      "status": "OK",
+      "duration_s": 120,
+      "asr_time_s": 3.17,
+      "rtf": 0.026,
+      "word_count": 191,
+      "words_per_sec": 1.6,
+      "detected_lang": "en",
+      "transcript_len": 1059,
+      "normalizer_corrections": false
+    },
+    {
+      "name": "Indian Call Center English",
+      "language": "English",
+      "accent": "Mixed Indian",
+      "yt_title": "Call Center Sounds - No Phones Ringing - Work From Home - Office -  Ambience",
+      "status": "OK",
+      "duration_s": 120,
+      "asr_time_s": 4.01,
+      "rtf": 0.033,
+      "word_count": 0,
+      "words_per_sec": 0.0,
+      "detected_lang": "en",
+      "transcript_len": 0,
+      "normalizer_corrections": false
+    }
+  ],
+  "transcripts": {
+    "Hindi News (Standard Hindi)": {
+      "raw": "Shurumania Kali Dal ki Rehta Subbe Singh Bala Pat naan Deed Meh Hamla Aspital Mehwe Bharti naan Deed Meh Subbe Singh Bala Pat naan Pala Pat naan Pala Pat naan Pala Pat naan Pathre Se Bahar E Nita naan Deed Meh Guldwari Ke Andar Subbe Singh Bala Pat naan Pathadhar Etyar Se Bahar Kharov Subbe Singh Bala Ke Dain Hai Pala Ghi Achoa Nijis Pral Neh Bharti Saam Le Mekha Ruki Ko Pulas Neh Rasat Holi Hai Anga Meh Ghi Bheet Chal Gya Mohamsum Sat Rui India Block Cover Oop Ritesh Saam Neh Aayi India Block and India Kessan Sat Makar Dwark Pan Naribhazi India Block vs India Aayi Vipakshi Santo Khyaak Meh Bandar Ke Uttale Jam Ka Naribhazi Kharge Bole Aakritan Chacha Kaleh Wee Thayar Veezan Seh Kya Kare Thig Ramanthri Aldwani Neh Kharge Ki Rali Ke Bha Ashut Di Karan Parsh Siyasi Gamasan Kongri Sa Bata Adal At Rode Man Sikta Aldwani Shruti Karan Puraad Sa Bha Meh Kharge Nanda Aane Saam Neh Kharge Bole Mahaam Radarsh Karaar Pyo Kuh Giraff Thayar Kare Aldwani Shruti Karan Vivaad Pananda Kabayan Bole BjPasi Kati Vidyokasam Patan Neh Kati Hai Hei Amar Li Dukha Deh Sansar Ki Mohamsum Sat Rika Sa Maha Pala Lok Sabha Ke Bhaar Rath Sa Bha Meh Anish Chit Kaal Neh Kaleen Ke Lees Thaget Sansar Ki Mohamsum Sat Rika Akhri Dhan Bhari Angama Sansar Ki Karan Mantri Rijuju Neh Kaha Puresatra Meh Bhaara Byl Pasi Revek Parvi Chacha Rijuju Neh Kaha Chacha Sa Bhaar Gipapakshi Saan Saan Saan Naray Bhaar Sikri Kaleen Ke Lees Thaget Rijuju Neh Kira Nijuju Neh Kaha Mohamsum Sat Rika Lok Sabha Meh Anish Chit Kaal Neh Uttas Feeze Di Kama Sansar Ki PM Modi Simolek Rehmantya Meh Chha Kaay Hai Mohdop Parvi Chacha Chharkhand Role Kudashan Ka B-Sadhan J-S-C-C-G-L Parikshar Adhkand Neh and Kadhit Prikshar Guptaalai Ki C-V-I-Janch Ki Ma Jharkhand Vylaati Chaj Ki Lama VVP Kapitashan B-125 VD Allama Meh Rothadashan Jhary",
+      "normalized": "Shurumania Kali Dal ki Rehta Subbe Singh Bala Pat naan Deed Meh Hamla Aspital Mehwe Bharti naan Deed Meh Subbe Singh Bala Pat naan Pala Pat naan Pala Pat naan Pala Pat naan Pathre Se Bahar E Nita naan Deed Meh Guldwari Ke Andar Subbe Singh Bala Pat naan Pathadhar Etyar Se Bahar Kharov Subbe Singh Bala Ke Dain Hai Pala Ghi Achoa Nijis Pral Neh Bharti Saam Le Mekha Ruki Ko Pulas Neh Rasat Holi Hai Anga Meh Ghi Bheet Chal Gya Mohamsum Sat Rui India Block Cover Oop Ritesh Saam Neh Aayi India Block and India Kessan Sat Makar Dwark Pan Naribhazi India Block vs India Aayi Vipakshi Santo Khyaak Meh Bandar Ke Uttale Jam Ka Naribhazi Kharge Bole Aakritan Chacha Kaleh Wee Thayar Veezan Seh Kya Kare Thig Ramanthri Aldwani Neh Kharge Ki Rali Ke Bha Ashut Di Karan Parsh Siyasi Gamasan Kongri Sa Bata Adal At Rode Man Sikta Aldwani Shruti Karan Puraad Sa Bha Meh Kharge Nanda Aane Saam Neh Kharge Bole Mahaam Radarsh Karaar Pyo Kuh Giraff Thayar Kare Aldwani Shruti Karan Vivaad Pananda Kabayan Bole BjPasi Kati Vidyokasam Patan Neh Kati Hai Hei Amar Li Dukha Deh Sansar Ki Mohamsum Sat Rika Sa Maha Pala Lok Sabha Ke Bhaar Rath Sa Bha Meh Anish Chit Kaal Neh Kaleen Ke Lees Thaget Sansar Ki Mohamsum Sat Rika Akhri Dhan Bhari Angama Sansar Ki Karan Mantri Rijuju Neh Kaha Puresatra Meh Bhaara Byl Pasi Revek Parvi Chacha Rijuju Neh Kaha Chacha Sa Bhaar Gipapakshi Saan Saan Saan Naray Bhaar Sikri Kaleen Ke Lees Thaget Rijuju Neh Kira Nijuju Neh Kaha Mohamsum Sat Rika Lok Sabha Meh Anish Chit Kaal Neh Uttas Feeze Di Kama Sansar Ki PM Modi Simolek Rehmantya Meh Chha Kaay Hai Mohdop Parvi Chacha Chharkhand Role Kudashan Ka B-Sadhan J-S-C-C-G-L Parikshar Adhkand Neh and Kadhit Prikshar Guptaalai Ki C-V-I-Janch Ki Ma Jharkhand Vylaati Chaj Ki Lama VVP Kapitashan B-125 VD Allama Meh Rothadashan Jhary",
+      "scrubbed": "Shurumania Kali Dal ki Rehta Subbe Singh Bala Pat naan Deed Meh Hamla Aspital Mehwe Bharti naan Deed Meh Subbe Singh Bala Pat naan Pala Pat naan Pala Pat naan Pala Pat naan Pathre Se Bahar E Nita naan Deed Meh Guldwari Ke Andar Subbe Singh Bala Pat naan Pathadhar Etyar Se Bahar Kharov Subbe Singh Bala Ke Dain Hai Pala Ghi Achoa Nijis Pral Neh Bharti Saam Le Mekha Ruki Ko Pulas Neh Rasat Holi Hai Anga Meh Ghi Bheet Chal Gya Mohamsum Sat Rui India Block Cover Oop Ritesh Saam Neh Aayi India Block and India Kessan Sat Makar Dwark Pan Naribhazi India Block vs India Aayi Vipakshi Santo Khyaak Meh Bandar Ke Uttale Jam Ka Naribhazi Kharge Bole Aakritan Chacha Kaleh Wee Thayar Veezan Seh Kya Kare Thig Ramanthri Aldwani Neh Kharge Ki Rali Ke Bha Ashut Di Karan Parsh Siyasi Gamasan Kongri Sa Bata Adal At Rode Man Sikta Aldwani Shruti Karan Puraad Sa Bha Meh Kharge Nanda Aane Saam Neh Kharge Bole Mahaam Radarsh Karaar Pyo Kuh Giraff Thayar Kare Aldwani Shruti Karan Vivaad Pananda Kabayan Bole BjPasi Kati Vidyokasam Patan Neh Kati Hai Hei Amar Li Dukha Deh Sansar Ki Mohamsum Sat Rika Sa Maha Pala Lok Sabha Ke Bhaar Rath Sa Bha Meh Anish Chit Kaal Neh Kaleen Ke Lees Thaget Sansar Ki Mohamsum Sat Rika Akhri Dhan Bhari Angama Sansar Ki Karan Mantri Rijuju Neh Kaha Puresatra Meh Bhaara Byl Pasi Revek Parvi Chacha Rijuju Neh Kaha Chacha Sa Bhaar Gipapakshi Saan Saan Saan Naray Bhaar Sikri Kaleen Ke Lees Thaget Rijuju Neh Kira Nijuju Neh Kaha Mohamsum Sat Rika Lok Sabha Meh Anish Chit Kaal Neh Uttas Feeze Di Kama Sansar Ki PM Modi Simolek Rehmantya Meh Chha Kaay Hai Mohdop Parvi Chacha Chharkhand Role Kudashan Ka B-Sadhan J-S-C-C-G-L Parikshar Adhkand Neh and Kadhit Prikshar Guptaalai Ki C-V-I-Janch Ki Ma Jharkhand Vylaati Chaj Ki Lama VVP Kapitashan B-125 VD Allama Meh Rothadashan Jhary"
+    },
+    "South Indian English (Tech Talk)": {
+      "raw": "Prime Minister Modi and distinguished leaders, it's wonderful to be back in India. Every time I visit, I'm struck by the pace of change and today is no different. Back when I was a student, I often took the Coramandel Express train from Chennai up to IAD Kharagpur. To get there, we passed through Vishakapatnam, Waisak. I remember it being a quiet and modest coastal city, brimming with potential. Now in that same city, Google is establishing a full-stack AI hub, part of our $15 billion infrastructure investment in India. When finished, this hub will house gigawatt scale compute and a new international subsea cable gateway, bringing jobs and cutting a J.I. to people and businesses across India. Sitting on that train, I never imagined Waisak becoming a global AI hub. Just as I couldn't have imagined that one day I'd be spending time with teams figuring out how to put data centers into space, or taking my parents for a fully autonomous car ride in San Francisco. Seeing a Vamo ride through my 83-year-old dad's eyes, I saw the progress in a whole new light. Of course, he said he'd be more impressed if it worked on India's busy roads, still working on that one day. The progress shows what's possible when humanity dreams big, and no technology has me dreaming bigger than AI. It is the biggest platform shift of our lifetimes. We are on the cusp of hyper-progress and new discoveries that can help emerging economies leapfrog legacy gaps. But that outcome is neither guaranteed nor automatic. To build AI that is truly helpful for everyone, we must pursue it boldly, approach it responsibly, and work through this defining moment together.",
+      "normalized": "Prime Minister Modi and distinguished leaders, it's wonderful to be back in India. Every time I visit, I'm struck by the pace of change and today is no different. Back when I was a student, I often took the Coramandel Express train from Chennai up to IAD Kharagpur. To get there, we passed through Vishakapatnam, Waisak. I remember it being a quiet and modest coastal city, brimming with potential. Now in that same city, Google is establishing a full-stack AI hub, part of our $15 billion infrastructure investment in India. When finished, this hub will house gigawatt scale compute and a new international subsea cable gateway, bringing jobs and cutting a J.I. to people and businesses across India. Sitting on that train, I never imagined Waisak becoming a global AI hub. Just as I couldn't have imagined that one day I'd be spending time with teams figuring out how to put data centers into space, or taking my parents for a fully autonomous car ride in San Francisco. Seeing a Vamo ride through my 83-year-old dad's eyes, I saw the progress in a whole new light. Of course, he said he'd be more impressed if it worked on India's busy roads, still working on that one day. The progress shows what's possible when humanity dreams big, and no technology has me dreaming bigger than AI. It is the biggest platform shift of our lifetimes. We are on the cusp of hyper-progress and new discoveries that can help emerging economies leapfrog legacy gaps. But that outcome is neither guaranteed nor automatic. To build AI that is truly helpful for everyone, we must pursue it boldly, approach it responsibly, and work through this defining moment together.",
+      "scrubbed": "Prime Minister Modi and distinguished leaders, it's wonderful to be back in India. Every time I visit, I'm struck by the pace of change and today is no different. Back when I was a student, I often took the Coramandel Express train from Chennai up to IAD Kharagpur. To get there, we passed through Vishakapatnam, Waisak. I remember it being a quiet and modest coastal city, brimming with potential. Now in that same city, Google is establishing a full-stack AI hub, part of our $15 billion infrastructure investment in India. When finished, this hub will house gigawatt scale compute and a new international subsea cable gateway, bringing jobs and cutting a J.I. to people and businesses across India. Sitting on that train, I never imagined Waisak becoming a global AI hub. Just as I couldn't have imagined that one day I'd be spending time with teams figuring out how to put data centers into space, or taking my parents for a fully autonomous car ride in San Francisco. Seeing a Vamo ride through my 83-year-old dad's eyes, I saw the progress in a whole new light. Of course, he said he'd be more impressed if it worked on India's busy roads, still working on that one day. The progress shows what's possible when humanity dreams big, and no technology has me dreaming bigger than AI. It is the biggest platform shift of our lifetimes. We are on the cusp of hyper-progress and new discoveries that can help emerging economies leapfrog legacy gaps. But that outcome is neither guaranteed nor automatic. To build AI that is truly helpful for everyone, we must pursue it boldly, approach it responsibly, and work through this defining moment together."
+    },
+    "Hinglish Stand-up Comedy": {
+      "raw": "میں دکھا پکے ہو گیا ہمی کلگی تیر دادیری مرستے سک کی آئی میں کامتکتے تھا میری ہمی تو دیا گیا گیا گیا تو یہ شادی بہل ہا تو پک چل دیا کنگ ہمی گولہ میں نے ہمیہ دمامت کھا کر فا دکھا دو دن گیا تو اسمیں ناٹا کٹ کٹ کٹ کیا آیا سو یہ بولگیں بارچا گیا میری ہمی رو دی کنگ کو بھرالگا بارچا گیا کنگے کیا ہمی گولہ دی اور پنتوں گھر میں کھا آپ نے بھین نہیں دی تو ہمارے کر میں سنسٹی بیٹی اور میکپ کا سمان دونوں نہیں پاچھا گیا ہم نے مواب ایسے دے گیا اور ایک کام کرتی ہی ساتھ می سے درنایا بیج کا کچھ رہای گیا ماری اور میری ممی فول ملوٹرمیٹک اور ہم نے پلکولی ہی مطلب اکتم پوری اکتیم ان کی دوج کی تو ہم بمارے جیتے میں سے کر راتی تی او اکتیم کر رہنے کی ہا بیٹا اور ہمیں کوئی اٹتش میسی ہم کلکولی آنی موستول بچے بیک بیکٹان کی اصمنا چدی رہی میں آلاگی لیٹی بمی دکجاری دوپیر میں لیٹی ہمیں آگا گڑبڑا آجتی اور ممی ممی ایسے افیکشنیدلی تچ بین کر رہن سے اوگلی سے کر رہنے ممی ممی ہمیں بیٹا کھانا ہے کھانا آنائمی گناتے ہمیں کھانا آگی بیٹا ہے اس بات ہمیں نا چیزے",
+      "normalized": "میں دکھا پکے ہو گیا ہمی کلگی تیر دادیری مرستے سک کی آئی میں کامتکتے تھا میری ہمی تو دیا گیا گیا گیا تو یہ شادی بہل ہا تو پک چل دیا کنگ ہمی گولہ میں نے ہمیہ دمامت کھا کر فا دکھا دو دن گیا تو اسمیں ناٹا کٹ کٹ کٹ کیا آیا سو یہ بولگیں بارچا گیا میری ہمی رو دی کنگ کو بھرالگا بارچا گیا کنگے کیا ہمی گولہ دی اور پنتوں گھر میں کھا آپ نے بھین نہیں دی تو ہمارے کر میں سنسٹی بیٹی اور میکپ کا سمان دونوں نہیں پاچھا گیا ہم نے مواب ایسے دے گیا اور ایک کام کرتی ہی ساتھ می سے درنایا بیج کا کچھ رہای گیا ماری اور میری ممی فول ملوٹرمیٹک اور ہم نے پلکولی ہی مطلب اکتم پوری اکتیم ان کی دوج کی تو ہم بمارے جیتے میں سے کر راتی تی او اکتیم کر رہنے کی ہا بیٹا اور ہمیں کوئی اٹتش میسی ہم کلکولی آنی موستول بچے بیک بیکٹان کی اصمنا چدی رہی میں آلاگی لیٹی بمی دکجاری دوپیر میں لیٹی ہمیں آگا گڑبڑا آجتی اور ممی ممی ایسے افیکشنیدلی تچ بین کر رہن سے اوگلی سے کر رہنے ممی ممی ہمیں بیٹا کھانا ہے کھانا آنائمی گناتے ہمیں کھانا آگی بیٹا ہے اس بات ہمیں نا چیزے",
+      "scrubbed": "میں دکھا پکے ہو گیا ہمی کلگی تیر دادیری مرستے سک کی آئی میں کامتکتے تھا میری ہمی تو دیا گیا گیا گیا تو یہ شادی بہل ہا تو پک چل دیا کنگ ہمی گولہ میں نے ہمیہ دمامت کھا کر فا دکھا دو دن گیا تو اسمیں ناٹا کٹ کٹ کٹ کیا آیا سو یہ بولگیں بارچا گیا میری ہمی رو دی کنگ کو بھرالگا بارچا گیا کنگے کیا ہمی گولہ دی اور پنتوں گھر میں کھا آپ نے بھین نہیں دی تو ہمارے کر میں سنسٹی بیٹی اور میکپ کا سمان دونوں نہیں پاچھا گیا ہم نے مواب ایسے دے گیا اور ایک کام کرتی ہی ساتھ می سے درنایا بیج کا کچھ رہای گیا ماری اور میری ممی فول ملوٹرمیٹک اور ہم نے پلکولی ہی مطلب اکتم پوری اکتیم ان کی دوج کی تو ہم بمارے جیتے میں سے کر راتی تی او اکتیم کر رہنے کی ہا بیٹا اور ہمیں کوئی اٹتش میسی ہم کلکولی آنی موستول بچے بیک بیکٹان کی اصمنا چدی رہی میں آلاگی لیٹی بمی دکجاری دوپیر میں لیٹی ہمیں آگا گڑبڑا آجتی اور ممی ممی ایسے افیکشنیدلی تچ بین کر رہن سے اوگلی سے کر رہنے ممی ممی ہمیں بیٹا کھانا ہے کھانا آنائمی گناتے ہمیں کھانا آگی بیٹا ہے اس بات ہمیں نا چیزے"
+    },
+    "Bengali English (Interview)": {
+      "raw": "I played with some great players. I'll tell you a story here and for me that was very important part of leadership and I spoke to you about man management. There was Sewaq batting with me in the middle and we were chasing that night 320 where I took my shirt off. And I was very upset at lunch because England got 325 and in those days this was about 2002. You very rarely chased 325. It's not like modern day cricket where you just keep hitting and the game has changed a lot. So I was walking down this long room at Lodz and Sewaq was whistling behind me. He had his back. He was that sort of a person. He was whistling behind me. So I turned up to me and then Hindi I abused him and said 1-325 was to make a bet but you think it's a joke. So he walks past me and said, we're going to win this. I said, let's see. So we went. We started very well both of us. And after 7 overs we were about 70 for Nolars. I was batting on 40 odd and Sewaq was also batting. So Ronnie Rani and many of you would have known in England. Ronnie Rani was bowling from this end and I went up to Viru and said you know we've got a good start. I think we can get this total but don't get out. You know we've played the harder bowlers. There's a weaker bowler coming in. Let's just keep taking 6-7 runs and over because that's what we need. He said, yeah, I find no problem. So Ronnie runs up from this end. He hits the first ball over mid off for 4. So I was at the non-striker end. I went up to him, tapped and said, good shot. So he got 4 runs and over. Just keep rotating. He said, yeah, I say there's no problem. So he goes back to his end. The next ball Ronnie pitches it up. He hits it over the top over mid on. 1 bounce 4. So I again go up to him and said, well played, well played, good shot. We've got 8.",
+      "normalized": "I played with some great players. I'll tell you a story here and for me that was very important part of leadership and I spoke to you about man management. There was Sewaq batting with me in the middle and we were chasing that night 320 where I took my shirt off. And I was very upset at lunch because England got 325 and in those days this was about 2002. You very rarely chased 325. It's not like modern day cricket where you just keep hitting and the game has changed a lot. So I was walking down this long room at Lodz and Sewaq was whistling behind me. He had his back. He was that sort of a person. He was whistling behind me. So I turned up to me and then Hindi I abused him and said 1-325 was to make a bet but you think it's a joke. So he walks past me and said, we're going to win this. I said, let's see. So we went. We started very well both of us. And after 7 overs we were about 70 for Nolars. I was batting on 40 odd and Sewaq was also batting. So Ronnie Rani and many of you would have known in England. Ronnie Rani was bowling from this end and I went up to Viru and said you know we've got a good start. I think we can get this total but don't get out. You know we've played the harder bowlers. There's a weaker bowler coming in. Let's just keep taking 6-7 runs and over because that's what we need. He said, yeah, I find no problem. So Ronnie runs up from this end. He hits the first ball over mid off for 4. So I was at the non-striker end. I went up to him, tapped and said, good shot. So he got 4 runs and over. Just keep rotating. He said, yeah, I say there's no problem. So he goes back to his end. The next ball Ronnie pitches it up. He hits it over the top over mid on. 1 bounce 4. So I again go up to him and said, well played, well played, good shot. We've got 8.",
+      "scrubbed": "I played with some great players. I'll tell you a story here and for me that was very important part of leadership and I spoke to you about man management. There was Sewaq batting with me in the middle and we were chasing that night 320 where I took my shirt off. And I was very upset at lunch because England got 325 and in those days this was about 2002. You very rarely chased 325. It's not like modern day cricket where you just keep hitting and the game has changed a lot. So I was walking down this long room at Lodz and Sewaq was whistling behind me. He had his back. He was that sort of a person. He was whistling behind me. So I turned up to me and then Hindi I abused him and said 1-325 was to make a bet but you think it's a joke. So he walks past me and said, we're going to win this. I said, let's see. So we went. We started very well both of us. And after 7 overs we were about 70 for Nolars. I was batting on 40 odd and Sewaq was also batting. So Ronnie Rani and many of you would have known in England. Ronnie Rani was bowling from this end and I went up to Viru and said you know we've got a good start. I think we can get this total but don't get out. You know we've played the harder bowlers. There's a weaker bowler coming in. Let's just keep taking 6-7 runs and over because that's what we need. He said, yeah, I find no problem. So Ronnie runs up from this end. He hits the first ball over mid off for 4. So I was at the non-striker end. I went up to him, tapped and said, good shot. So he got 4 runs and over. Just keep rotating. He said, yeah, I say there's no problem. So he goes back to his end. The next ball Ronnie pitches it up. He hits it over the top over mid on. 1 bounce 4. So I again go up to him and said, well played, well played, good shot. We've got 8."
+    },
+    "Punjabi English (Interview)": {
+      "raw": "ressingифích کوئی, چنم سے ہنچہ نہیں ہوتا, دوست, حنس اور بگلہ مانسرورور میں قتھے رہتے ہیں, حنس موتی خوشتا ہے, بگلہ, مشلیہ خوشتا ہے کمل کا فول کیجڈ میں اکتا ہے لیکن اپنے گنوں کی وجہ سے پرمات مصری حریقیس پیچھر ترتا ہے تو آدمی سوٹ سے ہوتا ہے, سوٹ سےگ, اِس سریشتی کو بضلنا ہے تو دریشتی کو بضلنا ہوگا, that's what I'm going to talk about that if you have to achieve, you've got to believe, you've got to be a believer to be an achiever fear clogs, faith liberates, doubt creates a mountain and faith tunnels through it I'm going to talk about the positivity, the champions bring about them a leader brings light to a room, he brings belief to a room they cannot be any fruit without the root and the root cause to all success according to me is belief for fear, for fear is the dark room in which negatives are developed fear, drugs, faith liberates, this negativity comes because of this fear when Danveer Karan was going to fight with Arjun, then his partner called Danveer that you are going to fight a Ranupat Ranadhir, you don't feel like a brother Danveer Karan has given a great advantage, he said, Madhru Naresh, he doesn't feel scared of the war he doesn't feel scared, I'm not a wooden warrior, that I'm not afraid but I didn't give my fear, my soul and faith to the darkness",
+      "normalized": "ressingифích کوئی, چنم سے ہنچہ نہیں ہوتا, دوست, حنس اور بگلہ مانسرورور میں قتھے رہتے ہیں, حنس موتی خوشتا ہے, بگلہ, مشلیہ خوشتا ہے کمل کا فول کیجڈ میں اکتا ہے لیکن اپنے گنوں کی وجہ سے پرمات مصری حریقیس پیچھر ترتا ہے تو آدمی سوٹ سے ہوتا ہے, سوٹ سےگ, اِس سریشتی کو بضلنا ہے تو دریشتی کو بضلنا ہوگا, that's what I'm going to talk about that if you have to achieve, you've got to believe, you've got to be a believer to be an achiever fear clogs, faith liberates, doubt creates a mountain and faith tunnels through it I'm going to talk about the positivity, the champions bring about them a leader brings light to a room, he brings belief to a room they cannot be any fruit without the root and the root cause to all success according to me is belief for fear, for fear is the dark room in which negatives are developed fear, drugs, faith liberates, this negativity comes because of this fear when Danveer Karan was going to fight with Arjun, then his partner called Danveer that you are going to fight a Ranupat Ranadhir, you don't feel like a brother Danveer Karan has given a great advantage, he said, Madhru Naresh, he doesn't feel scared of the war he doesn't feel scared, I'm not a wooden warrior, that I'm not afraid but I didn't give my fear, my soul and faith to the darkness",
+      "scrubbed": "ressingифích کوئی, چنم سے ہنچہ نہیں ہوتا, دوست, حنس اور بگلہ مانسرورور میں قتھے رہتے ہیں, حنس موتی خوشتا ہے, بگلہ, مشلیہ خوشتا ہے کمل کا فول کیجڈ میں اکتا ہے لیکن اپنے گنوں کی وجہ سے پرمات مصری حریقیس پیچھر ترتا ہے تو آدمی سوٹ سے ہوتا ہے, سوٹ سےگ, اِس سریشتی کو بضلنا ہے تو دریشتی کو بضلنا ہوگا, that's what I'm going to talk about that if you have to achieve, you've got to believe, you've got to be a believer to be an achiever fear clogs, faith liberates, doubt creates a mountain and faith tunnels through it I'm going to talk about the positivity, the champions bring about them a leader brings light to a room, he brings belief to a room they cannot be any fruit without the root and the root cause to all success according to me is belief for fear, for fear is the dark room in which negatives are developed fear, drugs, faith liberates, this negativity comes because of this fear when Danveer Karan was going to fight with Arjun, then his partner called Danveer that you are going to fight a Ranupat Ranadhir, you don't feel like a brother Danveer Karan has given a great advantage, he said, Madhru Naresh, he doesn't feel scared of the war he doesn't feel scared, I'm not a wooden warrior, that I'm not afraid but I didn't give my fear, my soul and faith to the darkness"
+    },
+    "Tamil Speech (Political)": {
+      "raw": "",
+      "normalized": "",
+      "scrubbed": ""
+    },
+    "Gujarati English (Business)": {
+      "raw": "Nobody has ever achieved anything big in business or in any walk of life without courage. Of course, whenever you do anything big, you do feel a little scared. But you've got to conquer fear to discover the hidden hero within you. My dearest reliance family, once again a very warm good evening to each and every one of you. Over the last 40 years, I have been very fortunate to lead reliance. Everything I am today is because of reliance. Everything I know today is thanks to reliance. This evening, I want to share with you the most important lessons I have learnt from my father during this phenomenal journey. The first lesson is courage and I have seen it in a whole lot of you. Nobody has ever achieved anything big in business or in any walk of life without courage. Of course, whenever you do anything big, you do feel a little scared. But you've got to conquer fear to discover the hidden hero within you, with courage, with self-belief and the can-do spirit, you overcome any adversity. Therefore, I want today's young leaders at reliance to realize",
+      "normalized": "Nobody has ever achieved anything big in business or in any walk of life without courage. Of course, whenever you do anything big, you do feel a little scared. But you've got to conquer fear to discover the hidden hero within you. My dearest reliance family, once again a very warm good evening to each and every one of you. Over the last 40 years, I have been very fortunate to lead reliance. Everything I am today is because of reliance. Everything I know today is thanks to reliance. This evening, I want to share with you the most important lessons I have learnt from my father during this phenomenal journey. The first lesson is courage and I have seen it in a whole lot of you. Nobody has ever achieved anything big in business or in any walk of life without courage. Of course, whenever you do anything big, you do feel a little scared. But you've got to conquer fear to discover the hidden hero within you, with courage, with self-belief and the can-do spirit, you overcome any adversity. Therefore, I want today's young leaders at reliance to realize",
+      "scrubbed": "Nobody has ever achieved anything big in business or in any walk of life without courage. Of course, whenever you do anything big, you do feel a little scared. But you've got to conquer fear to discover the hidden hero within you. My dearest reliance family, once again a very warm good evening to each and every one of you. Over the last 40 years, I have been very fortunate to lead reliance. Everything I am today is because of reliance. Everything I know today is thanks to reliance. This evening, I want to share with you the most important lessons I have learnt from my father during this phenomenal journey. The first lesson is courage and I have seen it in a whole lot of you. Nobody has ever achieved anything big in business or in any walk of life without courage. Of course, whenever you do anything big, you do feel a little scared. But you've got to conquer fear to discover the hidden hero within you, with courage, with self-belief and the can-do spirit, you overcome any adversity. Therefore, I want today's young leaders at reliance to realize"
+    },
+    "Indian Call Center English": {
+      "raw": "",
+      "normalized": "",
+      "scrubbed": ""
+    }
+  }
+}

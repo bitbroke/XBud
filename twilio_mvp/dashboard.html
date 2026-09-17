@@ -3,55 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twilio MVP Dashboard</title>
+    <title>XBud AI Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { background: #0A0A0A; color: white; font-family: sans-serif; padding: 20px; }
-        .card { background: #1E1E1E; padding: 20px; border-radius: 12px; margin-bottom: 20px; text-align: center; }
-        .status { color: #00E5FF; font-weight: bold; font-size: 1.2em; margin-top: 10px; }
-        .transcript-box { background: #141414; border: 1px solid #333; padding: 15px; border-radius: 8px; min-height: 80px; font-style: italic; color: #CCC; }
-        .action-item { background: #1E1E1E; padding: 15px; border-left: 4px solid #00E5FF; margin-bottom: 10px; border-radius: 8px; }
-        .action-title { font-size: 1.1em; font-weight: bold; margin-bottom: 5px; }
-        .action-subtitle { color: #888; font-size: 0.9em; }
+        :root {
+            --bg-color: #050505;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent: #00E5FF;
+            --accent-gradient: linear-gradient(135deg, #00E5FF 0%, #0077FF 100%);
+            --text-main: #FFFFFF;
+            --text-muted: #8892B0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 229, 255, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 119, 255, 0.05), transparent 25%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            text-align: center;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px 0 rgba(0, 229, 255, 0.1);
+        }
+
+        .status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .status-title {
+            font-size: 1.2em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .status-badge {
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9em;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 229, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); }
+        }
+
+        .transcript-box {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--glass-border);
+            padding: 25px;
+            border-radius: 12px;
+            min-height: 120px;
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #E2E8F0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5em;
+            margin: 0 0 20px 0;
+            color: #FFF;
+        }
+
+        .action-item {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 20px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 15px;
+            border-radius: 0 12px 12px 0;
+            transition: all 0.2s ease;
+        }
+
+        .action-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-left-color: #0077FF;
+        }
+
+        .action-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .action-meta {
+            display: flex;
+            gap: 15px;
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+
+        .meta-tag {
+            background: rgba(255,255,255,0.05);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        
+        .priority-high { color: #FF4D4D; border: 1px solid rgba(255,77,77,0.3); }
+        .priority-normal { color: #00E5FF; border: 1px solid rgba(0,229,255,0.3); }
+
     </style>
 </head>
 <body>
-    <h2 style="text-align: center;">EAR-BRAIN TWILIO MVP</h2>
-    
-    <div class="card">
-        <div>📡 Twilio Integration Status</div>
-        <div class="status" id="status">Awaiting Call...</div>
-    </div>
+    <div class="container">
+        <h2>EAR-BRAIN INTELLIGENCE</h2>
+        
+        <div class="card">
+            <div class="status-header">
+                <div class="status-title">System Status</div>
+                <div class="status-badge" id="status">Awaiting Call...</div>
+            </div>
+        </div>
 
-    <h3>LIVE TRANSCRIPT</h3>
-    <div class="transcript-box" id="transcript">Make a call to your Twilio number to begin.</div>
+        <div class="card">
+            <h3 class="section-title">Live Transcript</h3>
+            <div class="transcript-box" id="transcript">
+                <span style="color: var(--text-muted); font-style: italic;">Make a call to your Twilio number or connect the web client to begin streaming...</span>
+            </div>
+        </div>
 
-    <h3>ACTION ITEMS</h3>
-    <div id="action-feed">
-        <p style="color: #666; text-align: center;">No actions yet.</p>
+        <div class="card">
+            <h3 class="section-title">Extracted Action Items</h3>
+            <div id="action-feed">
+                <div style="color: var(--text-muted); padding: 20px; text-align: center; border: 1px dashed var(--glass-border); border-radius: 8px;">
+                    Listening for actionable commitments...
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
+        let lastActionCount = 0;
+        
         setInterval(async () => {
             try {
                 const res = await fetch('/api/data');
                 const data = await res.json();
-                document.getElementById('status').innerText = data.status;
-                if (data.transcript) {
+                
+                const statusEl = document.getElementById('status');
+                statusEl.innerText = data.status;
+                if(data.status.includes('Active') || data.status.includes('Streaming')) {
+                    statusEl.style.animation = 'pulse 2s infinite';
+                    statusEl.style.background = 'rgba(0, 229, 255, 0.1)';
+                    statusEl.style.color = '#00E5FF';
+                    statusEl.style.borderColor = 'rgba(0, 229, 255, 0.2)';
+                } else {
+                    statusEl.style.animation = 'none';
+                    statusEl.style.background = 'rgba(255, 255, 255, 0.05)';
+                    statusEl.style.color = '#8892B0';
+                    statusEl.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                }
+
+                if (data.transcript && data.transcript.trim() !== "") {
                     document.getElementById('transcript').innerText = data.transcript;
                 }
                 
-                if (data.action_items.length > 0) {
-                    let html = '';
-                    data.action_items.forEach(item => {
-                        html += `<div class="action-item">
-                            <div class="action-title">${item.what}</div>
-                            <div class="action-subtitle">Assigned to: ${item.who} | Due: ${item.when} | Priority: ${item.priority}</div>
-                        </div>`;
-                    });
-                    document.getElementById('action-feed').innerHTML = html;
+                if (data.action_items && data.action_items.length > 0) {
+                    if (data.action_items.length !== lastActionCount) {
+                        let html = '';
+                        data.action_items.forEach(item => {
+                            const pClass = item.priority.toLowerCase() === 'high' ? 'priority-high' : 'priority-normal';
+                            html += `
+                            <div class="action-item" style="animation: slideIn 0.3s ease-out;">
+                                <div class="action-title">${item.what}</div>
+                                <div class="action-meta">
+                                    <span class="meta-tag">👤 ${item.who}</span>
+                                    <span class="meta-tag">⏰ ${item.when}</span>
+                                    <span class="meta-tag ${pClass}">⚡ ${item.priority.toUpperCase()}</span>
+                                </div>
+                            </div>`;
+                        });
+                        document.getElementById('action-feed').innerHTML = html;
+                        lastActionCount = data.action_items.length;
+                        
+                        if(!document.getElementById('dynamic-styles')) {
+                            const style = document.createElement('style');
+                            style.id = 'dynamic-styles';
+                            style.innerHTML = `@keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }`;
+                            document.head.appendChild(style);
+                        }
+                    }
+                } else if (data.action_items.length === 0 && lastActionCount > 0) {
+                     document.getElementById('action-feed').innerHTML = `
+                     <div style="color: var(--text-muted); padding: 20px; text-align: center; border: 1px dashed var(--glass-border); border-radius: 8px;">
+                        Listening for actionable commitments...
+                    </div>`;
+                    lastActionCount = 0;
                 }
             } catch (e) {
-                console.error(e);
+                console.error("Dashboard fetch error:", e);
             }
         }, 1000);
     </script>
